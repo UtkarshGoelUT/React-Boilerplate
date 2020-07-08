@@ -14,7 +14,7 @@ export default class IndicisionApp extends React.Component {
     handlePick = () => {
         const randomNum = Math.floor(Math.random() * this.state.options.length);
         const option = this.state.options[randomNum];
-        alert(option);
+        this.setState(() => ({ selectedOption: option }));
     }
 
     handleDeleteOptions = () => {
@@ -61,7 +61,7 @@ export default class IndicisionApp extends React.Component {
     render() {
         return (
             <div>
-                <Header title="Indicision" subtitle="Let it choose for you" />
+                <Header title="Indecision" subtitle="Let it choose for you" />
                 <div className="container">
                     <Action handlePick={this.handlePick} hasOption={this.state.options.length > 0} />
                     <div className="widget">
